@@ -90,6 +90,10 @@ local function ProcessCommand(command, ...)
 		SetPreferredAddonLocale(nil)
 	elseif command == "reload" then
 		C_UI.Reload()
+	else
+		-- Treat '/addonlocale <locale name>' as-if "set" was executed.
+		local localeName = command
+		SetPreferredAddonLocale(localeName)
 	end
 end
 
