@@ -11,8 +11,8 @@
 ## X-Category: Development Tools, Miscellaneous
 ## X-License: CC0-1.0
 ## X-Website: https://github.com/Meorawr/AddonLocale
-## X-Curse-Project-ID:
-## X-Wago-ID:
+## X-Curse-Project-ID: 694919
+## X-Wago-ID: nQN5v36B
 ## X-WoWI-ID:
 
 AddonLocale.lua
