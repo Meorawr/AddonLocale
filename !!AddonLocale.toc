@@ -13,7 +13,7 @@
 ## X-Website: https://github.com/Meorawr/AddonLocale
 ## X-Curse-Project-ID: 694919
 ## X-Wago-ID: nQN5v36B
-## X-WoWI-ID:
+## X-WoWI-ID: 26439
 
 AddonLocale.lua
 Localization.lua
