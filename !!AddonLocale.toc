@@ -1,0 +1,19 @@
+## Interface: 100000
+## Interface-Wrath: 30400
+## Interface-TBC: 20504
+## Interface-Vanilla: 11403
+## Title: AddonLocale
+## Author: Daniel "Meorawr" Yates <me@meorawr.io>
+## Version: @project-version@
+## Notes: Provides an opt-in override for the client locale that can be used by supporting addons.
+## SavedVariables: GAME_LOCALE
+
+## X-Category: Development Tools, Miscellaneous
+## X-License: CC0-1.0
+## X-Website: https://github.com/Meorawr/AddonLocale
+## X-Curse-Project-ID:
+## X-Wago-ID:
+## X-WoWI-ID:
+
+AddonLocale.lua
+Localization.lua
