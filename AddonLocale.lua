@@ -49,7 +49,15 @@ end
 local function DisplayAvailableAddonLocales()
 	DisplayFormattedMessage(L.PROMPT_SET_LOCALE_CHOICES)
 
+	local locales = {}
+
 	for localeName in pairs(AVAILABLE_LOCALES) do
+		table.insert(locales, localeName)
+	end
+
+	table.sort(locales)
+
+	for _, localeName in ipairs(locales) do
 		local choiceLinkPrefix, choiceLinkSuffix = GenerateCommandHyperlink("set", localeName)
 		local choiceLinkInfix = GenerateLocaleDisplayText(localeName)
 		local choiceLink = string.join("", choiceLinkPrefix, choiceLinkInfix, choiceLinkSuffix)
