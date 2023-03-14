@@ -1,5 +1,8 @@
 # AddonLocale
 
+## 1.2
+- Version bump.
+
 ## 1.1
 - '/addonlocale <locale>' is now accepted as an alias for '/addonlocale set <locale>'.
 - The list of locales printed by `/addonlocale set' is now sorted.
