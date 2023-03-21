@@ -1,5 +1,8 @@
 # AddonLocale
 
+## 1.3
+- Version bump.
+
 ## 1.2
 - Version bump.
 
