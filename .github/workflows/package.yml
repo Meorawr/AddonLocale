@@ -11,10 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Create Package
-        uses: BigWigsMods/packager@v2
+        uses: BigWigsMods/packager@master
         with:
           args: -S -n 'AddonLocale-{project-version}{nolib}{classic}'
         env:
