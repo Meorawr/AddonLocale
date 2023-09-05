@@ -1,5 +1,8 @@
 # AddonLocale
 
+## 1.6
+- I can't believe it's another version bump.
+
 ## 1.5
 - Guess what? Version bump.
 
@@ -18,5 +21,4 @@
 - Updated TOC for patch 10.0.2.
 
 ## 1.0
-
 - Initial release.
