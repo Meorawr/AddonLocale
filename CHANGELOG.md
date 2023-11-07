@@ -1,5 +1,8 @@
 # AddonLocale
 
+## 1.7
+- Yet another version bump, oh my!
+
 ## 1.6
 - I can't believe it's another version bump.
 
