@@ -1,5 +1,8 @@
 # AddonLocale
 
+## 1.8
+- That thing was too big to be called a version bump.
+
 ## 1.7
 - Yet another version bump, oh my!
 
