@@ -1,5 +1,8 @@
 # AddonLocale
 
+## 1.9
+- up we go again
+
 ## 1.8
 - That thing was too big to be called a version bump.
 

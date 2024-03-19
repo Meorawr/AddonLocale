@@ -1,7 +1,7 @@
-## Interface: 100205
+## Interface: 100206
 ## Interface-Wrath: 30403
 ## Interface-TBC: 20504
-## Interface-Vanilla: 11500
+## Interface-Vanilla: 11501
 ## Title: AddonLocale
 ## Notes: Provides an opt-in override for the client locale that can be used by supporting addons.
 ## Author: Daniel "Meorawr" Yates <me@meorawr.io>
