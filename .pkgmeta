@@ -1,9 +1,5 @@
 package-as: "!!AddonLocale"
 enable-nolib-creation: no
 
-manual-changelog:
-  filename: CHANGELOG.md
-  markup-type: markdown
-
 ignore:
   - Makefile
