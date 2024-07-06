@@ -55,10 +55,32 @@ AddonLocale_Strings = {
 	},
 
 	zhCN = {
-		-- Add translations here.
+		ERR_INVALID_LOCALE = "插件偏好语言设置失败：%1$q 并非有效的语系名称。",
+		LOCALE_DISPLAY_TEXT = "%1$s (%2$s)",
+		PREFERRED_LOCALE_NOT_SET = "尚未设置插件偏好语言。",
+		PREFERRED_LOCALE_CURRENT = "目前的插件偏好语言是 %1$s。",
+		PREFERRED_LOCALE_CHANGED = "插件偏好语言已设置为 %1$s。",
+		PREFERRED_LOCALE_RESET = "插件偏好语言已重置。",
+		PROMPT_SET_LOCALE = "要更改偏好语言，%1$s请点击这里%2$s。",
+		PROMPT_RESET_LOCALE = "要重设语言言，%1$s请点击这里%2$s。",
+		PROMPT_SET_LOCALE_CHOICES = "从以下列表中选择一种语言：",
+		PROMPT_RELOAD_UI = "此更改需要 %1$s重载界面%2$s。",
+		SLASH_COMMAND_RESET = "重置",
+		SLASH_COMMAND_SET = "设置",
 	},
 
 	zhTW = {
-		-- Add translations here.
+		ERR_INVALID_LOCALE = "插件偏好語言設定失敗：%1$q 並非有效的語系名稱。",
+		LOCALE_DISPLAY_TEXT = "%1$s (%2$s)",
+		PREFERRED_LOCALE_NOT_SET = "尚未設定插件偏好語言。",
+		PREFERRED_LOCALE_CURRENT = "目前的插件偏好語言是 %1$s。",
+		PREFERRED_LOCALE_CHANGED = "插件偏好語言已設定為 %1$s。",
+		PREFERRED_LOCALE_RESET = "插件偏好語言已重設。",
+		PROMPT_SET_LOCALE = "要更改偏好語言，%1$s請點擊這裡%2$s。",
+		PROMPT_RESET_LOCALE = "要重設語言言，%1$s請點擊這裡%2$s。",
+		PROMPT_SET_LOCALE_CHOICES = "從以下列表中選擇一種語言：",
+		PROMPT_RELOAD_UI = "此更改需要 %1$s重載介面%2$s。",
+		SLASH_COMMAND_RESET = "重置",
+		SLASH_COMMAND_SET = "設定",
 	},
 }
