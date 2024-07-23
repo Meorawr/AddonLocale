@@ -16,7 +16,7 @@ jobs:
       - name: Create Package
         uses: BigWigsMods/packager@master
         with:
-          args: -S -n 'AddonLocale-{project-version}{nolib}{classic}'
+          args: -n 'AddonLocale-{project-version}{nolib}{classic}'
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}

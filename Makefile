@@ -8,4 +8,4 @@ check:
 	@luacheck -q $(shell git ls-files '*.lua')
 
 dist:
-	@curl -s $(PACKAGER_URL) | bash -s -- -d -S -n 'AddonLocale-{project-version}{nolib}{classic}'
+	@curl -s $(PACKAGER_URL) | bash -s -- -dn 'AddonLocale-{project-version}{nolib}{classic}'
