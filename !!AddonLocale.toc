@@ -1,4 +1,4 @@
-## Interface: 110000, 40400, 11503
+## Interface: 110002, 40400, 11503
 ## Title: AddonLocale
 ## Notes: Provides an opt-in override for the client locale that can be used by supporting addons.
 ## Author: Daniel "Meorawr" Yates <me@meorawr.io>
