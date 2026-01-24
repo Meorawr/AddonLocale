@@ -15,7 +15,7 @@ local AVAILABLE_LOCALES = {
 local AVAILABLE_LOCALES_CASE_FOLDED = {}
 
 for localeName, _ in pairs(AVAILABLE_LOCALES) do
-	AVAILABLE_LOCALES_CASE_FOLDED[string.lower(localeName)] = localeName;
+	AVAILABLE_LOCALES_CASE_FOLDED[string.lower(localeName)] = localeName
 end
 
 local EFFECTIVE_LOCALE = GAME_LOCALE or GetLocale()
@@ -72,22 +72,23 @@ local function DisplayAvailableAddonLocales()
 		local choiceLinkInfix = GenerateLocaleDisplayText(localeName)
 		local choiceLink = string.join("", choiceLinkPrefix, choiceLinkInfix, choiceLinkSuffix)
 
-		DisplayFormattedMessage(DASH_WITH_TEXT, choiceLink)
+		DisplayFormattedMessage(DASH_WITH_TEXT or "- %s", choiceLink)
 	end
 end
 
 local function SetPreferredAddonLocale(localeName)
-	localeName = AVAILABLE_LOCALES_CASE_FOLDED[string.lower(localeName)] or localeName
-
 	if localeName == nil then
 		GAME_LOCALE = nil
 		DisplayFormattedMessage(L.PREFERRED_LOCALE_RESET)
-	elseif AVAILABLE_LOCALES[localeName] then
-		GAME_LOCALE = localeName
-		DisplayFormattedMessage(L.PREFERRED_LOCALE_CHANGED, GenerateLocaleDisplayText(localeName))
 	else
-		DisplayFormattedMessage(L.ERR_INVALID_LOCALE, localeName)
-		return
+		localeName = AVAILABLE_LOCALES_CASE_FOLDED[string.lower(localeName)] or localeName
+		if AVAILABLE_LOCALES[localeName] then
+			GAME_LOCALE = localeName
+			DisplayFormattedMessage(L.PREFERRED_LOCALE_CHANGED, GenerateLocaleDisplayText(localeName))
+		else
+			DisplayFormattedMessage(L.ERR_INVALID_LOCALE, localeName)
+			return
+		end
 	end
 
 	if (GAME_LOCALE or GetLocale()) ~= EFFECTIVE_LOCALE then
