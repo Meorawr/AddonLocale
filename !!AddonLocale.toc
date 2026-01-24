@@ -1,11 +1,12 @@
-## Interface: 110205, 50501, 11508
+## Interface: 120000, 50503, 11508
 ## Title: AddonLocale
 ## Notes: Provides an opt-in override for the client locale that can be used by supporting addons.
 ## Notes-ruRU: Предоставляет возможность переопределения клиентской локализации, которую можно использовать с помощью дополнительных модулей
-## Author: Daniel "Meorawr" Yates <me@meorawr.io>
+## Author: Daniel "Meorawr" Yates <me@meorawr.net>
 ## Version: @project-version@
 ## IconAtlas: voicechat-channellist-icon-stt-off
 ## SavedVariables: GAME_LOCALE
+## LoadSavedVariablesFirst: 1
 
 ## X-Category: Development Tools, Miscellaneous
 ## X-License: CC0-1.0
@@ -14,5 +15,5 @@
 ## X-Wago-ID: nQN5v36B
 ## X-WoWI-ID: 26439
 
-AddonLocale.lua
 Localization.lua
+AddonLocale.lua

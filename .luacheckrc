@@ -3,11 +3,9 @@ max_line_length = false
 read_globals = {
 	"C_UI.Reload",
 	"ChatFrame_DisplaySystemMessageInCurrent",
+	"ChatFrameUtil.DisplaySystemMessageInCurrent",
 	"DASH_WITH_TEXT",
 	"EventRegistry.RegisterCallback",
-	"EventRegistry.RegisterFrameEvent",
-	"EventRegistry.UnregisterCallback",
-	"EventRegistry.UnregisterFrameEvent",
 	"GetLocale",
 	"hooksecurefunc",
 	"string.join",

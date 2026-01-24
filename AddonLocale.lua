@@ -1,6 +1,3 @@
-local ADDON_NAME = ...
-local L
-
 local AVAILABLE_LOCALES = {
 	deDE = "Deutsch",
 	enUS = "English",
@@ -15,7 +12,14 @@ local AVAILABLE_LOCALES = {
 	zhTW = "繁體中文",
 }
 
-local EFFECTIVE_LOCALE
+local AVAILABLE_LOCALES_CASE_FOLDED = {}
+
+for localeName, _ in pairs(AVAILABLE_LOCALES) do
+	AVAILABLE_LOCALES_CASE_FOLDED[string.lower(localeName)] = localeName;
+end
+
+local EFFECTIVE_LOCALE = GAME_LOCALE or GetLocale()
+local L = setmetatable(AddonLocale_Strings[EFFECTIVE_LOCALE] or {}, {__index = AddonLocale_Strings.enUS})
 
 local function GenerateLocaleDisplayText(localeName)
 	local localeNameLong = AVAILABLE_LOCALES[localeName] or UNKNOWN
@@ -23,13 +27,19 @@ local function GenerateLocaleDisplayText(localeName)
 end
 
 local function GenerateCommandHyperlink(command, ...)
-	local prefix = string.format("|cff82c5ff|Hgarrmission:addonlocale:%1$s:%2$s|h[", command, string.join(" ", ...))
+	local prefix = string.format("|cff82c5ff|Haddon:addonlocale:%1$s:%2$s|h[", command, string.join(" ", ...))
 	local suffix = "]|h|r"
 	return prefix, suffix
 end
 
 local function DisplayFormattedMessage(message, ...)
-	ChatFrame_DisplaySystemMessageInCurrent(string.format(message, ...))
+	local formattedMessage = string.format(message, ...)
+
+	if ChatFrameUtil.DisplaySystemMessageInCurrent then
+		ChatFrameUtil.DisplaySystemMessageInCurrent(formattedMessage)
+	else
+		ChatFrame_DisplaySystemMessageInCurrent(formattedMessage)
+	end
 end
 
 local function DisplayPreferredAddonLocale()
@@ -67,6 +77,8 @@ local function DisplayAvailableAddonLocales()
 end
 
 local function SetPreferredAddonLocale(localeName)
+	localeName = AVAILABLE_LOCALES_CASE_FOLDED[string.lower(localeName)] or localeName
+
 	if localeName == nil then
 		GAME_LOCALE = nil
 		DisplayFormattedMessage(L.PREFERRED_LOCALE_RESET)
@@ -105,10 +117,10 @@ local function ProcessCommand(command, ...)
 	end
 end
 
-local function OnHyperlinkClick(link)
+local function OnHyperlinkClick(_owner, link, _text, _button, _frame)
 	local linkType, linkSubtype, linkCommand = string.split(":", link, 3)
 
-	if linkType == "garrmission" and linkSubtype == "addonlocale" then
+	if linkType == "addon" and linkSubtype == "addonlocale" then
 		ProcessCommand(string.split(":", linkCommand))
 	end
 end
@@ -117,18 +129,6 @@ local function OnSlashCommand(data)
 	ProcessCommand(string.split(" ", data))
 end
 
-local function OnAddonLoaded(owner, addonName)
-	if addonName == ADDON_NAME then
-		EFFECTIVE_LOCALE = GAME_LOCALE or GetLocale()
-		L = setmetatable(AddonLocale_Strings[EFFECTIVE_LOCALE] or {}, { __index = AddonLocale_Strings.enUS })
-		EventRegistry:UnregisterCallback("ADDON_LOADED", owner)
-		EventRegistry:UnregisterFrameEvent("ADDON_LOADED")
-	end
-end
-
 SLASH_ADDONLOCALE1 = "/addonlocale"
 SlashCmdList["ADDONLOCALE"] = OnSlashCommand
-hooksecurefunc("SetItemRef", OnHyperlinkClick)
-
-EventRegistry:RegisterFrameEvent("ADDON_LOADED")
-EventRegistry:RegisterCallback("ADDON_LOADED", OnAddonLoaded, {})
+EventRegistry:RegisterCallback("SetItemRef", OnHyperlinkClick)
