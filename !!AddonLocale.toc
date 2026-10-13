@@ -1,4 +1,4 @@
-## Interface: 120000, 50503, 11508
+## Interface: 120105, 120100, 50504, 20506, 16001, 11509
 ## Title: AddonLocale
 ## Notes: Provides an opt-in override for the client locale that can be used by supporting addons.
 ## Notes-ruRU: Предоставляет возможность переопределения клиентской локализации, которую можно использовать с помощью дополнительных модулей
